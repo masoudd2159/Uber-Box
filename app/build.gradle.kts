@@ -67,6 +67,7 @@ dependencies {
     implementation(libs.lottie)
     implementation(libs.material)
     implementation(libs.okhttp)
+    implementation(libs.play.services.location)
     implementation(libs.play.services.maps)
     implementation(libs.retrofit)
     implementation(libs.sdp.android)

@@ -33,6 +33,7 @@ lottie = "6.4.1"
 material = "1.12.0"
 multidex = "2.0.1"
 okhttp = "5.0.0-alpha.14"
+playServicesLocation = "21.3.0"
 playServicesMaps = "18.2.0"
 retrofit = "2.11.0"
 sdpAndroid = "1.1.1"
@@ -69,6 +70,7 @@ logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-intercep
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 sdp-android = { group = "com.intuit.sdp", name = "sdp-android", version.ref = "sdpAndroid" }
