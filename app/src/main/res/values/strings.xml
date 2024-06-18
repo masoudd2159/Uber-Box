@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Ober Box</string>
+    <string name="app_name">Uber Box</string>
+    <string name="app_description">Uber Box makes delivery easier than ever</string>
+
+    <string name="app_version">Version %1$s</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>

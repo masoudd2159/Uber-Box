@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.SplashScreenActivity">
+
+    <carbon.widget.ImageView
+        android:id="@+id/background_logo_1"
+        android:layout_width="@dimen/_124sdp"
+        android:layout_height="@dimen/_124sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:alpha="0.15"
+        android:background="@color/colorPrimary"
+        app:carbon_cornerRadius="@dimen/_62sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <carbon.widget.ImageView
+        android:id="@+id/background_logo_2"
+        android:layout_width="@dimen/_108sdp"
+        android:layout_height="@dimen/_108sdp"
+        android:alpha="0.30"
+        android:background="@color/colorPrimary"
+        app:carbon_cornerRadius="@dimen/_54sdp"
+        app:layout_constraintBottom_toBottomOf="@id/background_logo_1"
+        app:layout_constraintLeft_toLeftOf="@id/background_logo_1"
+        app:layout_constraintRight_toRightOf="@id/background_logo_1"
+        app:layout_constraintTop_toTopOf="@id/background_logo_1" />
+
+    <carbon.widget.ImageView
+        android:id="@+id/background_logo_3"
+        android:layout_width="@dimen/_92sdp"
+        android:layout_height="@dimen/_92sdp"
+        android:alpha="0.60"
+        android:background="@color/colorPrimary"
+        app:carbon_cornerRadius="@dimen/_46sdp"
+        app:layout_constraintBottom_toBottomOf="@id/background_logo_2"
+        app:layout_constraintLeft_toLeftOf="@id/background_logo_2"
+        app:layout_constraintRight_toRightOf="@id/background_logo_2"
+        app:layout_constraintTop_toTopOf="@id/background_logo_2" />
+
+    <carbon.widget.ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="@dimen/_76sdp"
+        android:layout_height="@dimen/_76sdp"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_icon"
+        app:carbon_cornerRadius="@dimen/_38sdp"
+        app:layout_constraintBottom_toBottomOf="@id/background_logo_3"
+        app:layout_constraintLeft_toLeftOf="@id/background_logo_3"
+        app:layout_constraintRight_toRightOf="@id/background_logo_3"
+        app:layout_constraintTop_toTopOf="@id/background_logo_3" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintLeft_toLeftOf="@id/background_logo_1"
+        app:layout_constraintRight_toRightOf="@id/background_logo_1"
+        app:layout_constraintTop_toBottomOf="@id/background_logo_1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/app_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="@string/app_description"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_name" />
+
+    <carbon.widget.ImageView
+        android:id="@+id/picture"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:src="@drawable/pic_take_away"
+        app:layout_constraintBottom_toTopOf="@id/version"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_description" />
+
+    <carbon.widget.TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_margin="@dimen/_6sdp"
+        android:background="@color/overlay_dark_10"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:paddingLeft="@dimen/_7sdp"
+        android:paddingRight="@dimen/_7sdp"
+        android:text="version"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/_11ssp"
+        app:carbon_cornerRadius="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

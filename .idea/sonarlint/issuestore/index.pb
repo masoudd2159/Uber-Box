@@ -22,3 +22,21 @@ I
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+É
+Sapp/src/main/java/ir/masouddabbaghi/oberbox/data/storage/SharedPreferencesHelper.kt,5\a\5abad6873a0e29ff06e04f243e917bbdf22e4fc7
+á
+Wapp/src/main/java/ir/masouddabbaghi/oberbox/data/storage/SharedPreferencesHelperImpl.kt,d\7\d789c5c957629986f99dc4409b97455cf7fe8ffb
+Å
+Qapp/src/main/java/ir/masouddabbaghi/oberbox/data/storage/SharedPreferencesKeys.kt,7\c\7c103c0a2e270f646e79bebbc412fa31a61eeefa
+É
+Sapp/src/main/java/ir/masouddabbaghi/oberbox/data/storage/SharedPreferencesModule.kt,9\f\9f359f6ebcd8cefab880299a804f6ac07003d9e8
+j
+:app/src/main/java/ir/masouddabbaghi/oberbox/utils/Tools.kt,8\9\895d3eafd1a7f3f29350408e9151b75051effd53
+l
+<app/src/main/java/ir/masouddabbaghi/oberbox/MyApplication.kt,2\8\2888726092bfbe2302de233d50a112c98e59581d
+
+Oapp/src/main/java/ir/masouddabbaghi/oberbox/ui/activity/SplashScreenActivity.kt,5\5\554aa370c75ca18798feae2cc434c22036a468f4
+s
+Capp/src/main/java/ir/masouddabbaghi/oberbox/ui/base/BaseActivity.kt,4\7\4759ad11b836f31ee4835437acd1f2f67ebb06b7

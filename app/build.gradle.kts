@@ -1,10 +1,9 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.daggerHiltAndroid)
-    alias(libs.plugins.googleKsp)
-    alias(libs.plugins.androidxNavigationSafeargs)
-    alias(libs.plugins.googleAndroidLibrariesMapsplatformSecretsGradlePlugin)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.ksp)
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
 }
 
 android {
@@ -13,10 +12,10 @@ android {
 
     defaultConfig {
         applicationId = "ir.masouddabbaghi.oberbox"
-        minSdk = 28
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,12 +37,12 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
     implementation(libs.adapter.rxjava)
-    implementation(libs.android.justified)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
@@ -51,18 +50,14 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.hilt.navigation.fragment)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.multidex)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.carbon)
     implementation(libs.converter.gson)
     implementation(libs.converter.scalars)
-    implementation(libs.dotsindicator)
     implementation(libs.glide)
     implementation(libs.hilt.android)
     implementation(libs.kotlinx.coroutines.android)
@@ -72,11 +67,10 @@ dependencies {
     implementation(libs.lottie)
     implementation(libs.material)
     implementation(libs.okhttp)
-    implementation(libs.pinview)
+    implementation(libs.play.services.maps)
     implementation(libs.retrofit)
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
-    implementation(libs.play.services.maps)
 
     ksp(libs.ksp)
     ksp(libs.hilt.compiler)
