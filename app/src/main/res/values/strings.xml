@@ -3,5 +3,8 @@
     <string name="app_description">Uber Box makes delivery easier than ever</string>
 
     <string name="app_version">Version %1$s</string>
+    <string name="back">Back</string>
+    <string name="choose_destination">Choose Destination</string>
+    <string name="choose_origin">Choose Origin</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>

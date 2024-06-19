@@ -44,3 +44,5 @@ Capp/src/main/java/ir/masouddabbaghi/oberbox/ui/base/BaseActivity.kt,4\7\4759ad
 Qapp/src/main/java/ir/masouddabbaghi/oberbox/data/repository/LocationRepository.kt,f\8\f8a9ba784ae45a11d73d6e3ee41b8b82ab5c590c
 y
 Iapp/src/main/java/ir/masouddabbaghi/oberbox/ui/viewmodel/MapsViewModel.kt,0\6\064f73237b797c2d949594154fd438e6575f08a2
+F
+app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
