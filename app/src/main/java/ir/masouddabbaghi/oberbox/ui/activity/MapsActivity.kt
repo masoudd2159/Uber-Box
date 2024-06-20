@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,30 +18,27 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.Dash
-import com.google.android.gms.maps.model.Gap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.maps.model.PolylineOptions
-import com.google.maps.android.SphericalUtil
 import dagger.hilt.android.AndroidEntryPoint
 import ir.masouddabbaghi.oberbox.R
 import ir.masouddabbaghi.oberbox.databinding.ActivityMapsBinding
 import ir.masouddabbaghi.oberbox.ui.base.BaseActivity
 import ir.masouddabbaghi.oberbox.ui.viewmodel.MapsViewModel
-import java.util.Arrays
+import ir.masouddabbaghi.oberbox.utils.Tools.showCurvedPolyline
 
 @AndroidEntryPoint
 class MapsActivity :
     BaseActivity(),
     OnMapReadyCallback {
-    private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+    private lateinit var mMap: GoogleMap
     private lateinit var customMarkerView: View
-    private val mapsViewModel: MapsViewModel by viewModels()
-    private val locationPermissionRequestCode = 1
     private lateinit var point1: LatLng
     private lateinit var point2: LatLng
+
+    private val mapsViewModel: MapsViewModel by viewModels()
+    private val locationPermissionRequestCode = 1
 
     override fun getLayoutResourceBinding(): View {
         binding = ActivityMapsBinding.inflate(layoutInflater)
@@ -101,7 +97,7 @@ class MapsActivity :
 
                 customMarkerView.visibility = View.GONE
 
-                showCurvedPolyline(point1, point2, 0.40)
+                showCurvedPolyline(p1 = point1, p2 = point2, k = 0.40, mMap)
             }
         }
     }
@@ -127,57 +123,10 @@ class MapsActivity :
         val layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         addContentView(customMarkerView, layoutParams)
 
-        // Update marker position on camera move
         mMap.setOnCameraMoveListener {
             val centerLatLng = mMap.cameraPosition.target
             Log.i(tagLog, "Center latitude: ${centerLatLng.latitude}, longitude: ${centerLatLng.longitude}")
-            // Update any UI or marker position if needed
         }
-    }
-
-    private fun showCurvedPolyline(
-        p1: LatLng,
-        p2: LatLng,
-        k: Double,
-    ) {
-        // Calculate distance and heading between two points
-        val d: Double = SphericalUtil.computeDistanceBetween(p1, p2)
-        val h: Double = SphericalUtil.computeHeading(p1, p2)
-
-        // Midpoint position
-        val p: LatLng = SphericalUtil.computeOffset(p1, d * 0.5, h)
-
-        // Apply some mathematics to calculate position of the circle center
-        val x = (1 - k * k) * d * 0.5 / (2 * k)
-        val r = (1 + k * k) * d * 0.5 / (2 * k)
-
-        val c: LatLng = SphericalUtil.computeOffset(p, x, h + 90.0)
-
-        // Polyline options
-        val options = PolylineOptions()
-        val pattern = Arrays.asList(Dash(30f), Gap(20f))
-
-        // Calculate heading between circle center and two points
-        val h1: Double = SphericalUtil.computeHeading(c, p1)
-        val h2: Double = SphericalUtil.computeHeading(c, p2)
-
-        // Calculate positions of points on circle border and add them to polyline options
-        val numpoints = 100
-        val step = (h2 - h1) / numpoints
-
-        for (i in 0 until numpoints) {
-            val pi: LatLng = SphericalUtil.computeOffset(c, r, h1 + i * step)
-            options.add(pi)
-        }
-
-        // Draw polyline
-        mMap.addPolyline(
-            options
-                .width(10f)
-                .color(Color.BLACK)
-                .geodesic(false)
-                .pattern(pattern),
-        )
     }
 
     private fun enableMyLocation() {

@@ -1,13 +1,11 @@
 package ir.masouddabbaghi.oberbox.ui.viewmodel
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.map
 import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.masouddabbaghi.oberbox.data.repository.LocationRepository
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -16,19 +14,12 @@ class MapsViewModel
     constructor(
         private val locationRepository: LocationRepository,
     ) : ViewModel() {
-        private val _location = MutableLiveData<LatLng>()
-        val location: LiveData<LatLng> get() = _location
+        val location: LiveData<LatLng> =
+            locationRepository.location.map { location ->
+                LatLng(location.latitude, location.longitude)
+            }
 
         fun fetchLocation() {
-            viewModelScope.launch {
-                locationRepository.getLastLocation { result ->
-                    result
-                        .onSuccess { latLng ->
-                            _location.postValue(latLng)
-                        }.onFailure {
-                            // Handle failure
-                        }
-                }
-            }
+            locationRepository.fetchLocation()
         }
     }
