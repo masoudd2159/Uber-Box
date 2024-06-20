@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation(libs.adapter.rxjava)
+    implementation(libs.android.maps.utils)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)

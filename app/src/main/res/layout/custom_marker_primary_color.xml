@@ -11,9 +11,16 @@
         android:id="@+id/marker_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="@dimen/_140sdp"
         android:src="@drawable/pin"
+        app:carbon_tint="@color/colorPrimary" />
+
+    <carbon.widget.ImageView
+        android:id="@+id/marker_icon_hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/marker_icon"
+        android:src="@drawable/pin"
+        android:visibility="invisible"
         app:carbon_tint="@color/colorPrimary" />
 
 </RelativeLayout>

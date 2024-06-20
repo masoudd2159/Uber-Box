@@ -2,6 +2,7 @@
 activityKtx = "1.9.0"
 adapterRxjava = "2.11.0"
 agp = "8.5.0"
+androidMapsUtils = "3.8.2"
 appcompat = "1.7.0"
 browser = "1.8.0"
 carbon = "0.17.0"
@@ -41,6 +42,7 @@ sspAndroid = "1.1.1"
 
 [libraries]
 adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava", version.ref = "adapterRxjava" }
+android-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "androidMapsUtils" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activityKtx" }
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }

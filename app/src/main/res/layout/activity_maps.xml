@@ -52,11 +52,10 @@
         app:carbon_cornerRadius="@dimen/_18sdp"
         app:carbon_tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/button_choose"
         app:layout_constraintRight_toLeftOf="@id/guideline_end" />
 
     <carbon.widget.Button
-        android:id="@+id/button_choose"
+        android:id="@+id/button_choose_origin"
         android:layout_width="0dp"
         android:layout_height="@dimen/_36sdp"
         android:layout_marginLeft="@dimen/_5sdp"
@@ -69,6 +68,26 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/_13ssp"
+        app:carbon_cornerRadius="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guideline_begin"
+        app:layout_constraintRight_toLeftOf="@id/button_locate" />
+
+    <carbon.widget.Button
+        android:id="@+id/button_choose_destination"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/montserrat_medium"
+        android:layoutDirection="ltr"
+        android:text="@string/choose_destination"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        android:visibility="gone"
         app:carbon_cornerRadius="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/button_back"
@@ -92,6 +111,6 @@
         app:carbon_cornerRadius="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/guideline_begin"
-        app:layout_constraintRight_toLeftOf="@id/button_choose" />
+        app:layout_constraintRight_toLeftOf="@id/button_choose_destination" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
